@@ -13,6 +13,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'APZelos/blamer.nvim'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 map <C-b> :NERDTreeToggle<CR>
@@ -43,8 +45,11 @@ endif
 
 let g:indentLine_char='▏'
 
+" show quotes in json
+let g:indentLine_setConceal = 0
+
 " CoC extensions
-let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json', 'coc-eslint']
 
 " use <c-space>for trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
