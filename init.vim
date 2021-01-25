@@ -2,7 +2,7 @@ call plug#begin()
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'gkeep/iceberg-dark'
-Plug 'preservim/nerdtree'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yuezk/vim-js'
@@ -18,9 +18,10 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'dhruvasagar/vim-zoom'
+Plug 'rhysd/vim-clang-format'
 call plug#end()
 
-map <C-b> :NERDTreeToggle<CR>
+map <C-b> <cmd>CHADopen<CR>
 
 set rtp+=~/.fzf
 let g:fzf_layout = {'left': '30%'}
@@ -28,6 +29,8 @@ let g:fzf_layout = {'left': '30%'}
 nnoremap <C-f> :Files<CR>
 
 set rnu
+
+set autoindent
 
 " tabs vs spaces
 :set expandtab
