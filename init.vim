@@ -56,6 +56,9 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
+noremap <C-S-Left>  :-tabmove<cr>
+noremap <C-S-Right> :+tabmove<cr>
+
 " split windows the right way
 :set splitright
 :set splitbelow
@@ -82,9 +85,6 @@ endif
 
 let g:indentLine_char='▏'
 
-let g:indentLine_setColors = 0
-let g:indentLine_defaultGroup = 'SpecialKey'
-
 " show quotes in json
 let g:indentLine_setConceal = 0
 
@@ -102,7 +102,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " prettier
-nmap <leader>f :CocCommand prettier.formatFile<CR>
+nmap <leader>f :call CocAction('format')<CR>
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.

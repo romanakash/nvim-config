@@ -1,6 +1,8 @@
 {
     "eslint.autoFixOnSave": true, 
     "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "markdown", "css"],
+    "python.jediPath": "/home/kelsier/miniconda3/lib/python3.8/site-packages",
+    "python.jediEnabled": false,
     "languageserver": {
     "ccls": {
       "command": "ccls",
