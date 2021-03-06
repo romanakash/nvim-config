@@ -9,6 +9,7 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'Konfekt/vim-alias'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
@@ -23,8 +24,20 @@ call plug#end()
 
 map <C-b> <cmd>CHADopen<CR>
 
+nnoremap o o<Esc>
+nnoremap O O<Esc>
+
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
+
 set rtp+=~/.fzf
-let g:fzf_layout = {'left': '30%'}
+let g:fzf_layout = {'down': '30%'}
 
 nnoremap <C-f> :Files<CR>
 
@@ -83,10 +96,10 @@ else
   augroup END
 endif
 
-let g:indentLine_char='▏'
+let g:indentLine_char='⎸'
 
 " show quotes in json
-let g:indentLine_setConceal = 0
+let g:indentLine_setConceal = 1 
 
 " CoC extensions
 let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json', 'coc-eslint', 'coc-tailwind-intellisense', 'coc-react-refactor']
