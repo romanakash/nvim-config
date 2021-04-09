@@ -63,6 +63,10 @@ vnoremap d "_d
 nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 
+" Switch between tabs easily
+nnoremap H gT
+nnoremap L gt
+
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
@@ -100,6 +104,9 @@ let g:indentLine_char='⎸'
 
 " show quotes in json
 let g:indentLine_setConceal = 1 
+
+" C-s to surround with tags
+inoremap <buffer> <C-s> <esc>yiwi<lt><esc>ea></><esc>hpF>i
 
 " CoC extensions
 let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json', 'coc-eslint', 'coc-tailwind-intellisense', 'coc-react-refactor']
