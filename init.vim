@@ -9,6 +9,8 @@ Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'simrat39/symbols-outline.nvim'
+Plug 'mhartington/formatter.nvim'
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
@@ -126,9 +128,9 @@ EOF
 
 
 " Find files using Telescope command-line sugar.
-nnoremap <C-f> <cmd>Telescope find_files<cr>
+nnoremap <C-f> <cmd>Telescope git_files find_command=rg,--hidden,--files<cr>
 nnoremap <C-g> <cmd>Telescope live_grep<cr>
-nnoremap <C-b> <cmd>Telescope file_browser<cr>
+nnoremap <C-p> <cmd>Telescope file_browser<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
@@ -158,6 +160,10 @@ nnoremap <silent> gh :Lspsaga lsp_finder<CR>
 " code action
 nnoremap <silent><leader>ca :Lspsaga code_action<CR>
 vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+
+" jump diagnostic
+nnoremap <silent><leader>j :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent><leader>k :Lspsaga diagnostic_jump_prev<CR>
 
 " hover doc
 nnoremap <silent>K :Lspsaga hover_doc<CR>
@@ -221,6 +227,52 @@ EOF
 
 " SYMBOLS OUTLINE
 nnoremap <silent> <A-]> :SymbolsOutline<CR>
+
+
+" Format vim
+nnoremap <silent><leader>f :Format<CR>
+
+lua << EOF
+require('formatter').setup({
+  logging = false,
+  filetype = {
+    javascript = {
+     -- prettierd
+           function()
+              return {
+                exe = "prettierd",
+                args = {vim.api.nvim_buf_get_name(0)},
+                stdin = true
+              }
+     end
+    },
+    typescript = {
+     -- prettierd
+           function()
+              return {
+                exe = "prettierd",
+                args = {vim.api.nvim_buf_get_name(0)},
+                stdin = true
+              }
+     end
+    },
+    rust = {
+      -- Rustfmt
+      function()
+        return {
+          exe = "rustfmt",
+          args = {"--emit=stdout"},
+          stdin = true
+        }
+      end
+    },
+  }
+})
+EOF
+
+
+" DOGE
+let g:doge_mapping='<leader>m'
 
 
 colorscheme gruvbox
