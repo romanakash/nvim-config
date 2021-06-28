@@ -11,6 +11,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'mhartington/formatter.nvim'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+Plug 'SirVer/ultisnips'
+Plug 'mlaursen/vim-react-snippets'
+Plug 'ggandor/lightspeed.nvim'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
@@ -196,6 +199,7 @@ let g:compe.source = {
     \ 'path': v:true,
     \ 'buffer': v:true,
     \ 'nvim_lsp': v:true,
+    \ 'ultisnips': v:true
     \ }
 
 inoremap <silent><expr> <C-Space> compe#complete()
@@ -273,6 +277,10 @@ EOF
 
 " DOGE
 let g:doge_mapping='<leader>m'
+
+
+" Ulti snips
+let g:UltiSnipsExpandTrigger='<A-c>'
 
 
 colorscheme gruvbox
