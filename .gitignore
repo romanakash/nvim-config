@@ -1,1 +1,4 @@
-plugged/
+.DS_STORE
+/plugged
+/autoload
+plug.vim
