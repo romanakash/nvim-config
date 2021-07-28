@@ -117,7 +117,7 @@ let g:indentLine_char='⎸'
 " show quotes in json
 let g:indentLine_setConceal = 1 
 
-let g.indent_blankline_show_current_context = 1
+let g:indent_blankline_show_current_context = 1
 
 
 " C-s to surround with tags
