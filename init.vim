@@ -17,7 +17,6 @@ Plug 'ggandor/lightspeed.nvim'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
-Plug 'Yggdroot/indentLine'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'Konfekt/vim-alias'
 Plug 'jiangmiao/auto-pairs'
@@ -135,7 +134,7 @@ EOF
 
 
 " Find files using Telescope command-line sugar.
-nnoremap <C-f> <cmd>Telescope git_files find_command=rg,--hidden,--files<cr>
+nnoremap <C-f> <cmd>Telescope find_files find_command=rg,--hidden,--files<cr>
 nnoremap <C-g> <cmd>Telescope live_grep<cr>
 nnoremap <C-p> <cmd>Telescope file_browser<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
