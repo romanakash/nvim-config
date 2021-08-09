@@ -186,7 +186,7 @@ nnoremap <silent>gs :Lspsaga signature_help<CR>
 nnoremap <silent>gr :Lspsaga rename<CR>
 
 " preview definition
-nnoremap <silent> gd :Lspsaga preview_definition<CR>
+nnoremap <silent> ga :Lspsaga preview_definition<CR>
 
 " floating terminal
 nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
@@ -379,6 +379,8 @@ colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 
 set termguicolors
+
+highlight EndOfBuffer ctermfg=black ctermbg=black
 
 highlight NonText guibg=none
 highlight Normal guibg=none
