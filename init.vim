@@ -283,7 +283,6 @@ require('formatter').setup({
         }
       end
     },
-   }
     python = {
       -- autopep8
       function()
@@ -294,6 +293,7 @@ require('formatter').setup({
         }
       end
     },
+  }
 })
 EOF
 
