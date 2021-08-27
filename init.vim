@@ -270,7 +270,17 @@ require('formatter').setup({
         }
       end
     },
-  }
+    json = {
+      -- Rustfmt
+      function()
+        return {
+            exe = "jq",
+            args = {"."},
+            stdin = true
+        }
+      end
+    },
+   }
 })
 EOF
 
