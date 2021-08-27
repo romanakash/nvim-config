@@ -96,6 +96,18 @@ nmap <A-j> :m+1<CR>
 " clear search highlights
 nnoremap <Leader><space> :noh<cr>
 
+
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+
+set termguicolors
+
+highlight EndOfBuffer ctermfg=black ctermbg=black
+
+highlight NonText guibg=none
+highlight Normal guibg=none
+
+
 " Fugitive Conflict Resolution
 nnoremap <leader>gd :Gvdiffsplit!<CR>
 nnoremap gdh :diffget //2<CR>
@@ -384,13 +396,3 @@ require('rust-tools').setup(opts)
 require('rust-tools.inlay_hints').set_inlay_hints()
 EOF
 
-
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-
-set termguicolors
-
-highlight EndOfBuffer ctermfg=black ctermbg=black
-
-highlight NonText guibg=none
-highlight Normal guibg=none
