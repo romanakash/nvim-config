@@ -124,12 +124,17 @@ else
 endif
 
 " indent-blankline
-let g:indentLine_char='⎸'
+lua << EOF
+vim.opt.listchars = {
+    space = "⋅",
+    eol = "↴",
+}
 
-" show quotes in json
-let g:indentLine_setConceal = 1 
-
-let g:indent_blankline_show_current_context = 1
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+}
+EOF
 
 
 " C-s to surround with tags
@@ -158,7 +163,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 lua << EOF
 --javascript/typescript
 require'lspconfig'.tsserver.setup{}
-require'lspconfig'.pyls.setup{}
 EOF
 
 
