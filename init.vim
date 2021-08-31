@@ -126,11 +126,11 @@ endif
 " indent-blankline
 lua << EOF
 vim.opt.listchars = {
-    space = "⋅",
     eol = "↴",
 }
 
 require("indent_blankline").setup {
+    char = "⎸",
     space_char_blankline = " ",
     show_current_context = true,
 }
@@ -235,7 +235,7 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " TREESITTER STUFF
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-ensure_installed = {"javascript", "typescript", "python"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+ensure_installed = {"javascript", "typescript", "tsx" ,"python"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {}, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
